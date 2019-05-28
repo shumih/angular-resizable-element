@@ -412,7 +412,7 @@ class ResizableDirective {
                     y: Math.ceil(coords.clientY / snapGrid.y)
                 };
             }
-            return merge(mouseMove.pipe(take(1)).pipe(map(coords => [coords])), mouseMove.pipe(pairwise()))
+            return merge(mouseMove.pipe(take(1)).pipe(map(coords => [, coords])), mouseMove.pipe(pairwise()))
                 .pipe(map(([previousCoords, newCoords]) => {
                 return [
                     previousCoords ? getDiff(previousCoords) : previousCoords,

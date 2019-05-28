@@ -1,1 +1,2 @@
-export declare class ResizableModule {}
+export declare class ResizableModule {
+}

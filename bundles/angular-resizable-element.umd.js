@@ -482,7 +482,7 @@
                             y: Math.ceil(coords.clientY / snapGrid.y)
                         };
                     }
-                    return rxjs.merge(mouseMove.pipe(operators.take(1)).pipe(operators.map(function (coords) { return [coords]; })), mouseMove.pipe(operators.pairwise()))
+                    return rxjs.merge(mouseMove.pipe(operators.take(1)).pipe(operators.map(function (coords) { return [, coords]; })), mouseMove.pipe(operators.pairwise()))
                         .pipe(operators.map(function (_a) {
                         var _b = __read(_a, 2), previousCoords = _b[0], newCoords = _b[1];
                         return [

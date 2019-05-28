@@ -429,7 +429,7 @@ var ResizableDirective = /** @class */ (function () {
                     y: Math.ceil(coords.clientY / snapGrid.y)
                 };
             }
-            return merge(mouseMove.pipe(take(1)).pipe(map(function (coords) { return [coords]; })), mouseMove.pipe(pairwise()))
+            return merge(mouseMove.pipe(take(1)).pipe(map(function (coords) { return [, coords]; })), mouseMove.pipe(pairwise()))
                 .pipe(map(function (_a) {
                 var _b = __read(_a, 2), previousCoords = _b[0], newCoords = _b[1];
                 return [
